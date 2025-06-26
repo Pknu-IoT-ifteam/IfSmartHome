@@ -1754,6 +1754,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1371433859}
+  - {fileID: 1198075746}
   m_Father: {fileID: 1914156174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2862,6 +2863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Calendar
       objectReference: {fileID: 0}
+    - target: {fileID: 6677668969058739722, guid: 0cec3b45f43a5cf49bd469c8b0b89f73, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7134575795451796292, guid: 0cec3b45f43a5cf49bd469c8b0b89f73, type: 3}
       propertyPath: m_SizeDelta.x
       value: 50
@@ -3005,7 +3010,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6677668969058739722, guid: 0cec3b45f43a5cf49bd469c8b0b89f73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1359482067}
   m_SourcePrefab: {fileID: 100100000, guid: 0cec3b45f43a5cf49bd469c8b0b89f73, type: 3}
 --- !u!1 &571510841
 GameObject:
@@ -5079,6 +5087,7 @@ GameObject:
   - component: {fileID: 880283229}
   - component: {fileID: 880283231}
   - component: {fileID: 880283230}
+  - component: {fileID: 880283232}
   m_Layer: 5
   m_Name: HomePanel
   m_TagString: Untagged
@@ -5146,6 +5155,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880283228}
   m_CullTransparentMesh: 1
+--- !u!114 &880283232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880283228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53671e5f42c8964e8bd16b775bd0fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  homeTemp: {fileID: 1371433858}
+  homeTemp2: {fileID: 1198075745}
 --- !u!224 &883370672 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929319314537888889, guid: 79b75ddf55820394fb4d5de9595fa2e0, type: 3}
@@ -6500,7 +6523,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1836968027}
+      - m_Target: {fileID: 1359482067}
         m_TargetAssemblyTypeName: ChartDateController, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 5
@@ -6708,6 +6731,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196223697}
   m_CullTransparentMesh: 1
+--- !u!1 &1198075745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1198075746}
+  - component: {fileID: 1198075748}
+  - component: {fileID: 1198075747}
+  m_Layer: 5
+  m_Name: Temp2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1198075746
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198075745}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 386413222}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 64.558, y: -0.00017548}
+  m_SizeDelta: {x: 129.12, y: 193.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1198075747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198075745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\uC9D1\uC2B5\uB3C4"
+--- !u!222 &1198075748
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198075745}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1205981604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6825,7 +6927,7 @@ GameObject:
   - component: {fileID: 1216368762}
   - component: {fileID: 1216368761}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: StartDate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7696,7 +7798,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1836968027}
+      - m_Target: {fileID: 1359482067}
         m_TargetAssemblyTypeName: ChartDateController, Assembly-CSharp
         m_MethodName: OnButtonClick
         m_Mode: 5
@@ -7875,7 +7977,7 @@ GameObject:
   - component: {fileID: 1341724827}
   - component: {fileID: 1341724826}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: EndDate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8140,11 +8242,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349025945}
   m_CullTransparentMesh: 1
+--- !u!1 &1359482061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6677668969058739722, guid: 0cec3b45f43a5cf49bd469c8b0b89f73, type: 3}
+  m_PrefabInstance: {fileID: 551352266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1359482062 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8172971005301011226, guid: 0cec3b45f43a5cf49bd469c8b0b89f73, type: 3}
   m_PrefabInstance: {fileID: 551352266}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1359482067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359482061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5136d4774067f4386c8f7c16e6edbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDate: {fileID: 1216368759}
+  endDate: {fileID: 1341724824}
+  currDateObj: {fileID: 0}
 --- !u!1001 &1363463303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8297,7 +8419,7 @@ GameObject:
   - component: {fileID: 1371433861}
   - component: {fileID: 1371433860}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Temp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8319,8 +8441,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00028992, y: -0.00017548}
-  m_SizeDelta: {x: 258.23, y: 193.5}
+  m_AnchoredPosition: {x: -64.558, y: -0.00017548}
+  m_SizeDelta: {x: 129.11, y: 193.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1371433860
 MonoBehaviour:
@@ -8355,7 +8477,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC9D1\uC758 \uC628\uB3C4, \uC2B5\uB3C4"
+  m_Text: "\uC9D1\uC628\uB3C4"
 --- !u!222 &1371433861
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10935,7 +11057,7 @@ MonoBehaviour:
   userPanel: {fileID: 2052829328}
   settingsPanel: {fileID: 1902550543}
   sliderToggle: {fileID: 1509479980}
-  calendarPanel: {fileID: 0}
+  calendarPanel: {fileID: 1359482061}
 --- !u!114 &1717763762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11675,7 +11797,6 @@ GameObject:
   - component: {fileID: 1836968024}
   - component: {fileID: 1836968026}
   - component: {fileID: 1836968025}
-  - component: {fileID: 1836968027}
   m_Layer: 5
   m_Name: ChartPanel
   m_TagString: Untagged
@@ -11744,21 +11865,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836968023}
   m_CullTransparentMesh: 1
---- !u!114 &1836968027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1836968023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d5136d4774067f4386c8f7c16e6edbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chartCalendar: {fileID: 0}
-  startDateButton: {fileID: 1329249319}
-  endDateButton: {fileID: 1178192487}
 --- !u!1001 &1850902070
 PrefabInstance:
   m_ObjectHideFlags: 0
