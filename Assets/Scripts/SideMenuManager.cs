@@ -10,7 +10,7 @@ public class SideMenuManager : MonoBehaviour
 
     [Header("Buttons")]
     public Button homeButton;
-    public Button modelButton;
+    public Button ViewerButton;
     public Button chartButton;
     public Button userButton;
     public Button settingsButton;
@@ -22,7 +22,7 @@ public class SideMenuManager : MonoBehaviour
         if (!uiManager) return;
 
         homeButton.onClick.AddListener(() => uiManager.ShowHomePanel());
-        modelButton.onClick.AddListener(() => uiManager.ShowModelPanel());
+        ViewerButton.onClick.AddListener(() => uiManager.ShowViewerPanel());
         chartButton.onClick.AddListener(() => uiManager.ShowChartPanel());
         userButton.onClick.AddListener(() => uiManager.ShowUserPanel());
         settingsButton.onClick.AddListener(() => uiManager.ShowSettingsPanel());

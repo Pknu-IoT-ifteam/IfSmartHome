@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Product : MonoBehaviour
 {
-    public ProductData productData;
+    [SerializeField] private ProductData productDataTemplate;
     public GameObject lampLight;
 
     private Outline outline;
-    void Start()
+    private ProductData productData;
+
+    public static event System.Action<ProductType, bool> OnProductStateChanged;
+
+    public ProductData Data => productData;
+    void Awake()
     {
+        productData = Instantiate(productDataTemplate);
         outline = GetComponent<Outline>();
         if (!outline) return;
         outline.enabled = true;
@@ -33,6 +40,7 @@ public class Product : MonoBehaviour
                 TurnOffLamp(isTurn);
             }
         }
+        OnProductStateChanged?.Invoke(productData.productType, isTurn);
     }
     public void ChangeColorOfOutline(bool isTurn)
     {

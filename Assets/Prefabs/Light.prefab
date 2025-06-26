@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8825232935443010433}
   - component: {fileID: 1621228824237418193}
-  - component: {fileID: 2285594497345567311}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -95,16 +94,3 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &2285594497345567311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5423345959812023797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e9bccf780109b542a622be6b980e92a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  productData: {fileID: 11400000, guid: a7b98a0ac98545645821bdf0a290a387, type: 2}
