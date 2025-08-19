@@ -7,19 +7,33 @@ using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChartDateController : MonoBehaviour
+public class DateController : MonoBehaviour
 {
     [Header("Calendar")]
     [SerializeField] private GameObject startDate;
     [SerializeField] private GameObject endDate;
 
+    [Header("Charts")]
+    [SerializeField] private ElecticUsageChart electricUsageChart;
+
+    [Header("Panel")]
+    [SerializeField] private GameObject doorLockPanel;
+
+    [Header("Managers")]
+    [SerializeField] private UIManager uiManager;
+
     public GameObject currDateObj;
-    private DateTime startDateTime = DateTime.Now;
-    private DateTime endDateTime = DateTime.Now;
+    [HideInInspector] public DateTime startDateTime = DateTime.Now;
+    [HideInInspector] public DateTime endDateTime = DateTime.Now;
 
     public DateTime currDate;
 
-    private string mode = "start";
+    [HideInInspector] public string mode = "start";
+
+    private void Awake()
+    {
+        //Debug.Log(endDateTime);
+    }
     public void OnButtonClick(string info)
     {
         switch (info)
@@ -42,17 +56,37 @@ public class ChartDateController : MonoBehaviour
     public void SetDate(DateTime selectedDate)
     {
         string selected = selectedDate.Year.ToString() + "-" + selectedDate.Month.ToString() + "-" + selectedDate.Day.ToString();
-        currDateObj.GetComponent<Text>().text = selected;
         switch (mode)
         {
             case "start":
+                if (selectedDate > endDateTime)
+                {
+                    Debug.LogWarning("Start date cannot be after end date.");
+                    return;
+                }
                 startDateTime = selectedDate;
                 break;
             case "end":
+                if (selectedDate < startDateTime)
+                {
+                    Debug.LogWarning("End date cannot be before start date.");
+                    return;
+                }
                 endDateTime = selectedDate;
                 break;
             default:
                 break;
+        }
+        currDateObj.GetComponent<Text>().text = selected;
+
+        if (electricUsageChart)
+        {
+            //Debug.Log($"startDateTime: {startDateTime}, endDateTime: {endDateTime}");   
+            electricUsageChart.ShowUsageChart(startDateTime, endDateTime);
+        }
+        if (doorLockPanel && uiManager)
+        {
+            uiManager.InitDoorLockEntry();
         }
     }
     public void Initialize(DateTime start, DateTime end)

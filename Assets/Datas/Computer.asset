@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd64c8f42262ac148bff9ff25bea808a, type: 3}
   m_Name: Computer
   m_EditorClassIdentifier: 
+  productId: 5
   productName: "\uCEF4\uD4E8\uD130"
   productDescription: 
-  productType: 2
+  productType: 4
   isOn: 1
   brightness: 0
   sound: {fileID: 0}

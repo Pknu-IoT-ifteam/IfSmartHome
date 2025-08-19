@@ -34,8 +34,8 @@ public class Product : MonoBehaviour
         ChangeColorOfOutline(productData.isOn);
         if (lampLight)
         {
-            if (productData.productType == ProductType.Lamp || productData.productType == ProductType.Television || productData.productType == ProductType.Computer
-                || productData.productType == ProductType.MicrowaveOven)
+            if (productData.productType == ProductType.Television || productData.productType == ProductType.Computer
+                || productData.productType == ProductType.MicrowaveOven || productData.productType == ProductType.Lamp)
             {
                 TurnOffLamp(isTurn);
             }

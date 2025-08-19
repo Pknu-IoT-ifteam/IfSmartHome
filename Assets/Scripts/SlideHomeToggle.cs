@@ -68,24 +68,8 @@ public class SlideHomeToggle : MonoBehaviour
 
         bool newToggleState;
 
-        if (productType == ProductType.Lamp)
-        {
-            // 모든 램프가 켜져있어야 true
-            newToggleState = true;
-            foreach (GameObject lampObj in productGameObjects)
-            {
-                if (!lampObj.GetComponent<Product>().Data.isOn)
-                {
-                    newToggleState = false;
-                    break;
-                }
-            }
-        }
-        else
-        {
-            newToggleState = productGameObjects[0].GetComponent<Product>().Data.isOn;
-        }
-        
+        newToggleState = productGameObjects[0].GetComponent<Product>().Data.isOn;
+
         // 무한 루프 방지: 현재 상태와 다를 때만 업데이트
         if (toggle.isOn != newToggleState || !isInitialized)
         {
@@ -174,4 +158,22 @@ public class SlideHomeToggle : MonoBehaviour
 
         UpdateToggleState();
     }
+
+    //private void test1()
+    //{
+    //    // led
+    //}
+
+    //private void test2()
+    //{
+    //    // 아무튼 어떤거
+    //}
+    
+    //private void SwitchOn()
+    //{
+    //    if (productType == ProductType.Lamp)
+    //    {
+    //        test1();
+    //    }
+    //}
 }

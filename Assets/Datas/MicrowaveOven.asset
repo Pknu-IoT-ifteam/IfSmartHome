@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd64c8f42262ac148bff9ff25bea808a, type: 3}
   m_Name: MicrowaveOven
   m_EditorClassIdentifier: 
+  productId: 6
   productName: "\uC804\uC790\uB808\uC778\uC9C0"
   productDescription: 
-  productType: 7
+  productType: 5
   isOn: 1
   brightness: 0
   sound: {fileID: 0}

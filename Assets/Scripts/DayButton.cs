@@ -15,7 +15,7 @@ namespace SimpleCalendar
         [SerializeField] private TextMeshProUGUI dayText;
 
         [Tooltip("Color of the day's box when it is today's date.")]
-        [SerializeField] private Color todaysColor = Color.yellow;
+        [SerializeField] private Color selectColor = Color.yellow;
 
         [Tooltip("Base Color of the day's box.")]
         [SerializeField] private Color baseColor = Color.white;
@@ -50,11 +50,7 @@ namespace SimpleCalendar
             dayText.text = Date.Day.ToString();
 
             // Set the color:
-            if (Date.Date == DateTime.Now.Date)
-            {
-                GetComponent<UnityEngine.UI.Image>().color = todaysColor;
-            }
-            else if (!curMonth)
+            if (!curMonth)
             {
                 GetComponent<UnityEngine.UI.Image>().color = paddingDayColor;
             }

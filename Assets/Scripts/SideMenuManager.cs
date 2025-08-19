@@ -21,11 +21,11 @@ public class SideMenuManager : MonoBehaviour
         uiManager = UIManager.GetComponent<UIManager>();
         if (!uiManager) return;
 
-        homeButton.onClick.AddListener(() => uiManager.ShowHomePanel());
-        ViewerButton.onClick.AddListener(() => uiManager.ShowViewerPanel());
-        chartButton.onClick.AddListener(() => uiManager.ShowChartPanel());
-        userButton.onClick.AddListener(() => uiManager.ShowUserPanel());
-        settingsButton.onClick.AddListener(() => uiManager.ShowSettingsPanel());
+        //homeButton.onClick.AddListener(() => uiManager.ShowHomePanel());
+        //ViewerButton.onClick.AddListener(() => uiManager.ShowViewerPanel());
+        //chartButton.onClick.AddListener(() => uiManager.ShowChartPanel());
+        //userButton.onClick.AddListener(() => uiManager.ShowUserPanel());
+        //settingsButton.onClick.AddListener(() => uiManager.ShowSettingsPanel());
     }
 
     void Update()

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd64c8f42262ac148bff9ff25bea808a, type: 3}
   m_Name: AirConditioner
   m_EditorClassIdentifier: 
+  productId: 2
   productName: "\uC5D0\uC5B4\uCEE8"
   productDescription: 
-  productType: 0
+  productType: 1
   isOn: 0
   brightness: 0
   sound: {fileID: 0}

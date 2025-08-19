@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd64c8f42262ac148bff9ff25bea808a, type: 3}
   m_Name: Lamp
   m_EditorClassIdentifier: 
-  productName: "\uB7A8\uD504"
+  productId: 7
+  productName: 
   productDescription: 
-  productType: 5
-  isOn: 1
+  productType: 6
+  isOn: 0
   brightness: 0
   sound: {fileID: 0}
