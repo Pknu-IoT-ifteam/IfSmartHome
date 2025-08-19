@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd64c8f42262ac148bff9ff25bea808a, type: 3}
   m_Name: WashingMachine
   m_EditorClassIdentifier: 
+  productId: 3
   productName: "\uC138\uD0C1\uAE30"
   productDescription: 
-  productType: 10
+  productType: 2
   isOn: 0
   brightness: 0
   sound: {fileID: 0}

@@ -31,7 +31,7 @@ namespace SimpleCalendar
         // By default, they are set to the current month and year at the start.
         // This could be changed to, for example, save and load the month/year the user was looking at before.
 
-        private ChartDateController chartDateController;
+        private DateController dateController;
         private int selectedMonth = DateTime.Now.Month;
         private int selectedYear = DateTime.Now.Year;
 
@@ -52,7 +52,7 @@ namespace SimpleCalendar
 
         private void OnEnable()
         {
-            chartDateController = GetComponent<ChartDateController>();
+            dateController = GetComponent<DateController>();
 
             if (!isInitialized)
             {
@@ -77,9 +77,9 @@ namespace SimpleCalendar
 
         public void SetCalendarDate()
         {
-            selectedYear = chartDateController.currDate.Year;
-            selectedMonth = chartDateController.currDate.Month;
-            Debug.Log(selectedYear + " - " + selectedMonth);
+            selectedYear = dateController.currDate.Year;
+            selectedMonth = dateController.currDate.Month;
+            //Debug.Log(selectedYear + " - " + selectedMonth);
         }
 
         /// <summary>
@@ -232,15 +232,21 @@ namespace SimpleCalendar
 
         public void OnDateSelected(DateTime date)
         {
-            if (!chartDateController) return;
+            if (!dateController) return;
 
-            string year = date.Year.ToString();
-            string month = date.Month.ToString();
-            string day = date.Day.ToString();
-
-            string selectedDate = year + "-" + month + "-" + day;
-
-            chartDateController.SetDate(date);
+            switch(dateController.mode)
+            {
+                case "start":
+                    dateController.SetDate(date);
+                    break;
+                case "end":
+                    DateTime endOfDay = date.Date.AddDays(1).AddMilliseconds(-1);
+                    dateController.SetDate(endOfDay);
+                    break;
+                default:
+                    Debug.LogWarning("Unknown mode: " + dateController.mode);
+                    break;
+            }
         }
 
     }

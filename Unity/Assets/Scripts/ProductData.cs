@@ -7,6 +7,7 @@ using NaughtyAttributes;
 public class ProductData : ScriptableObject
 {
     [Header("Product Information")]
+    public int productId;
     public string productName;
     public string productDescription;
     public ProductType productType;
@@ -20,7 +21,7 @@ public class ProductData : ScriptableObject
     private bool ShowBrightness()
     {
         return productType == ProductType.Computer ||
-               productType == ProductType.Light ||
+               productType == ProductType.Lamp ||
                productType == ProductType.MicrowaveOven ||
                productType == ProductType.Television;
     }
@@ -30,7 +31,6 @@ public class ProductData : ScriptableObject
         return productType == ProductType.AirConditioner ||
                productType == ProductType.Cleaner ||
                productType == ProductType.ElectricFan ||
-               productType == ProductType.Humidifier ||
                productType == ProductType.Refrigerator ||
                productType == ProductType.WashingMachine;
     }
@@ -38,15 +38,13 @@ public class ProductData : ScriptableObject
 
 public enum ProductType
 {
-    AirConditioner, // 에어컨
-    Cleaner, // 청소기
-    Computer, // 컴퓨터
     ElectricFan, // 선풍기
-    Humidifier, // 가습기
-    Lamp, // 램프
-    Light, // 전등빛
-    MicrowaveOven, // 전자레인지
+    AirConditioner, // 에어컨
+    WashingMachine, // 세탁기
     Refrigerator, // 냉장고
+    Computer, // 컴퓨터
+    MicrowaveOven, // 전자레인지
+    Lamp, // 전등빛
     Television, // TV
-    WashingMachine // 세탁기
+    Cleaner // 청소기
 }
