@@ -94,7 +94,7 @@ public class SlideHomeToggle : MonoBehaviour
             }
         }
         ArduinoReader reader = FindObjectOfType<ArduinoReader>();
-
+        Debug.Log(reader);
         reader.SetIsOn(productType, isOn);
 
     }
